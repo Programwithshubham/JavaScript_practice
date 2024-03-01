@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    background-color: black;
+    color: white;
+
+}
+.headings{
+    text-align: center;
+    font-size: 3.6rem;
+
+}
+
+.main_page{
+    display: flex;
+    margin: 10px 50px;
+}
+.left{
+    margin: auto;
+    width: 50%;
+    font-size: 3.6rem;
+    margin-left: 10px;
+}
+.right{
+    width: 50%;
+}
+.content{
+    font-size: 2rem;
+   margin-left: 20%;
+   margin-right: 20%;
+}
+.content_info{
+    background-color: black;
+    color: white;
+}
+
+
+.right img{
+    width: 100%;
+    height: auto;
+}
