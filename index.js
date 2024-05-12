@@ -1,50 +1,21 @@
-
-const alertMessage = alert("Welcome to js ")
- let confirmMessage = confirm("are you sure ")
-  let role =prompt("Enter Your  Role :")
-
-
-
-// String methods  -----------------------
-
-const names= "JAvascript Tutorial"
-const msg = "    welcome to js    "
-const TrimEx = msg.trim()
-console.log(TrimEx);
-const startTrim = msg.trimStart()
-console.log(startTrim);
-const EndTrim = msg.trimEnd()
-console.log(EndTrim);
-let includesEx = msg.includes('welcome')
-console.log(includesEx);
-let indexofEx = msg.indexOf('come')
-console.log(indexofEx);
-let replaceEx = msg.replace('js','Programing languages ')
-console.log(replaceEx);
-let replaceAEx1 = msg.replaceAll('e','E')
-console.log(replaceAEx1);
- let concatEx = msg.concat(names)
- console.log(concatEx);
-let concatWithQuote = msg+"."+names
-console.log(concatWithQuote);
+console.log(Math.floor(23.2));//23
+console.log(Math.ceil(23.2));//24
+console.log(34 ** 2); //1156
+console.log(Math.pow(2,6));//64
+console.log(Math.round(3442.2));//3442
+console.log(Math.round(3442.6));//3443
+console.log(Math.random());//0.7136114441368251
 
 
-const number1 = '1234'
-// trick 1
- const padstartExample = '***********'+ number1
- console.log(padstartExample);
-//  trick 2
-const padstartExample1 = number1.padStart(12,'*')
-console.log(padstartExample1);
+console.log(Math.floor(Math.random()*20));//16
+console.log(7/0);//infinity
+console.log(-7/0);//-infinity
+console.log(typeof Infinity);//number
+console.log(0/0);//NaN
 
- const padendExample = msg.padEnd(12,'*')
- console.log(padendExample);
+// Input from user 
 
- const charAtExample = names.charAt(0)
- console.log(charAtExample);
+ let width =prompt("Enter Number  and Rectangle and width:")
+ let height =prompt("Enter Number  and Rectangle and Height:")
  
- const charCodeAtExample = names.charCodeAt(1)
- console.log(charCodeAtExample);
-
-  let splitString = names.split(' ')
-  console.log(splitString);
+document.write(`Rectangle Height and width  : ${ width * height}`);
