@@ -1,98 +1,229 @@
-//                                                                               Object 
-// const user = {  firstName : 'shubham', lastName: "Dhobe", age : 22 ,    education : 'graduation', city : 'pune'}
-// const user1 = {  firstName : 'Rahul', lastName: "Patil", age : 23 ,    education : 'graduation', city : 'Pune'}
-const myName = "shubham"
+// creating Object using literal
+let obj = {
+    name :"shubham",
+    age :22,
+    education : "BCA",
+    NO : 234567,
+}
 
-const username1 = ''
-const username2 = ''
-
-const user1 = { 
-    firstName : "shubham",
-    lastName : "Dhobe"
- }
-const user2 = { 
-    "firstName" : "Rahul",
-    "lastName" : "patil ",
-    "your-age" : 22,
-     shubham : 'Dev'
- }
-//  update or add value
-   user2.firstName = "Ajay"
-   user2.lastName = "patils"
-   user2.education = "BCA"
-
-   user2["is-student"] = true
+console.log(obj.name)
+console.log(obj.age)
+console.log(obj.education)
+console.log(obj.No)
+console.log("-------------------")
+console.log(obj['name'])
+console.log(obj['age'])
+console.log(obj['education'])
+console.log(obj['No'])
+console.log("-------------------")
 
 
-//  console.log(user2.firstName);
-//  console.log(user2["firstName"]);
-//  console.log(user2["your-age"]);
-//  console.log(user2.shubham);
-//  console.log(user2["first"+ "Name"]);
+// by using {}
+const person = {};
+person.name= "shubham",
+person.age = 22,
+person.education = 'BCA'
+person.No =3456678
+
+console.log(person)
 
 
 
-const user3 = { 
-    firstName : "Rahul",
-    lastName : "patil",
-    address : {
-        city : "pune" ,
-        pinCode : 4110128,
-        state : 'Maharastra',
-        moreDetails : {
-            population : 34567898,
-            area : 'Hadapsar'
+// by using new keyword
+const person = new Object();
+person.name= "shubham",
+person.age = 22,
+person.education = 'BCA'
+person.No =3456678
+console.log(person)
 
-        }
+
+
+//Object Constructor
+function person(name,age,education,No) {
+  this.name = name;
+  this.age=age;
+  this.education=education;
+  this.No = No;
+}
+let personObj =new person('shubham',22,'BCA',345678)
+console.log(personObj)
+
+
+
+
+// adding default value
+function person(name,age,education,No) {
+  this.name = name;
+  this.age=age;
+  this.education=education;
+  // default value
+  this.No = 45678;
+  
+}
+let result =new person('shubham',22,'BCA')
+console.log(result)
+
+
+//Object Properties
+const person = new Object();
+person.name= "shubham",
+person.age = 22,
+person.education = 'BCA'
+person.No =3456678
+// console.log(person)
+// Returns an array of the keys
+console.log(Object.keys(person))
+// Returns an array of the property values 
+console.log(Object.values(person))
+// Returns an array of the key/value pairs of an object
+console.log(Object.entries(person))
+
+// object Prototype Inheritance :- ou canot add new property but in case you want to add new properties to object constructor
+function person(name,age,education,No) {
+  this.name = name;
+  this.age=age;
+  this.education=education;
+  this.No = No;
+  ///you canot add new property
+  person.height = 6.2
+}
+person.Prototype.nationality = 'indian'
+let personObj1 =new person('shubham',22,'BCA',345678)
+console.log(result1.nationality)
+let personObj2 =new person('shubham',22,'BCA',345678)
+let personObj3=new person('akash',23,'BCs',145678)
+console.log(personObj1)
+console.log(personObj2)
+
+
+// Object Methods
+const obj1 = {
+    name :"shubham",
+    age :22,
+    education : "BCA",
+    NO : 234567,
+}
+const obj2 = {
+    name :"ajay",
+    age :23,
+  
+}
+//Object,assign is used to copy properties from one or more objects to target object
+let result1 = Object.assign(obj1,obj2)
+console.log(result1)
+//object.entries is used to Returns array in key value paire
+let result2 = Object.entries(obj1)
+console.log(result2)
+
+// convert object to map 
+const myMap = new Map(Object.entries(obj1));
+console.log(myMap)
+
+//Obect.entries in loops
+let texts = ''
+for(let [key,value] of Object.entries(obj1)){
+  texts = texts +  ": "+ key +":"+value
+  console.log(texts)
+}
+
+
+
+// Object in for in loop 
+let text = ''
+for (let [item] in obj1) {
+  text = text + obj1[item]
+   
+}
+console.log(text )
+
+
+// add or change properties
+Object.defineProperty(obj1, "year", {value:"2008"});
+console.log(obj1)
+
+
+
+// Object Getter and Setter
+
+// Getter
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "Ma",
+
+    get lang() {
+      return this.language
     }
- }
+}
+console.log(person.language)
+
+
+// setter
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "Ma",
+    set lang(lang) {
+      // this.language = lang
+        this.language = lang.toUpperCase()
+    }
+}
+// //Set an object property using a setter:
+person.lang = 'en'
+console.log(person.language)
 
 
 
-//   delete the value 
-// delete user1.lastName
+// Seal() and Freeze()
+const person = {
+    firstName: "John",
+    lastName: "Doe",
+    language: "Ma",
+}
+Object.seal(person)
+delete person.language
+console.log(person)
+console.log( Object.isSealed(person))
 
-//  change value 
-// let username = 'Rahul'
-// username = 'akshay '
-// console.log(username);
+Object.freeze(person)
+person.language = 'san'
 
-//  console.log(user3.address);
-//  console.log(user3.address.city);
-//  console.log(user3.address.pinCode);
-//  console.log(user3.address.state);
-// console.log(user3.address.moreDetails.population);
-// console.log(user3.address.moreDetails.area);
-
-//  if you want to value only modify exist in object but  does not delete or new Create    ----------- Object.seal()-----------
-// let username3 = 'Rahul'
-// Object.seal(username3)
-// // you can change values
-// username3 = 'Akash'
-// console.log(username3); 
-// username3
+console.log(person)
 
 
-// Object.seal(user3)
-// user3.firstName = 'akshay '
-// delete user3.lastName
 
-
-// -------------------------------- Object.freeze() - if you want  user  not change any value , delete and add  then used Object.freeze()
-// Object.freeze(user3)
-// user3.lastName = "bhosle " 
-
-
-// ------------------ in()  :- check key is present or not 
-// console.log( 'address' in user3);
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+Object.freeze(fruits);
+person.push("Kiwi");
+console.log(fruits)
+console.log(Object.isFrozen())
 
 
 
 
-//  change value 
-let username = 'Rahul'
-username = 'akshay '
-// console.log(username);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
